@@ -9,6 +9,7 @@ body {
   background-color: #7D6E83;
   color: #F8EDE3;
 }
+
 .container{
   width: 80%;
   margin: auto;
@@ -36,3 +37,20 @@ ul a{
   margin: 0 15px;
 }
 
+.LeftBar{
+  overflow: hidden;
+  background-color: #DFD3C3;
+  color: #7D6E83; 
+  width: 200px;
+  height:900px;
+}
+
+.LeftBar ul a{
+
+  color: #7D6E83; 
+ 
+}
+.login{
+  margin-top: 50px;
+  
+}
