@@ -6,7 +6,7 @@ import SignUp from './Component/signUp';
 import About from './Component/About';
 import HomePage from './Component/HomePage';
 import AdoptCondition from './Component/AdoptCondition';
-
+import "./App.css"
 class App extends React.Component{
 render () {
   return (
@@ -14,6 +14,7 @@ render () {
        
         <div className="app">
           <Nav />
+          <div className="main">
           <Routes>
           <Route path="/LogIn" element= {<LogIn/>}/>
           <Route path="/SignUp" element= {<SignUp/>}/>
@@ -21,6 +22,7 @@ render () {
           <Route path="/HomePage" element= {<HomePage/>}/>
           <Route path="/AdoptCondition" element= {<AdoptCondition/>}/>
           </Routes>
+          </div>
         </div>
         </BrowserRouter> 
   );

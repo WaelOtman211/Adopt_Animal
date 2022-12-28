@@ -1,0 +1,45 @@
+
+.login{
+   
+    width:240px;
+ scale: 1.5;  
+ font-family:'Inter';
+   
+  }
+  
+  .login label{
+   
+    float:left;
+    margin-top: 15px;
+    height: 30px;
+    font-size: 20px;
+    color :#7D6E83
+
+  }
+
+  .login input{
+float: right;
+width :120px;
+height: 25px;
+margin-top: 15px;
+border-radius:10px;
+border-color: blueviolet;
+  }
+  .login button{
+   
+    margin-top: 25px;
+    width: 100px;
+    margin-left:30%;
+    background-color: transparent;
+    border: none;
+    font-family: "Indie Flower";
+    color :#5d3ff3;
+    font-size: 30px;
+  
+  }
+
+  .login button:hover{
+  scale: 1.5;
+    transition: scale 0.5s;
+
+  }

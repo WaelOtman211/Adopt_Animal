@@ -1,56 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');/* importing Indie Flower font from google  */
+@import url('https://fonts.googleapis.com/css?family=Inter');
 body {
   background-color: #F8EDE3;
   margin: 0;
   padding: 0;
   font-family: serif;
 }
-.navbar{
-  overflow: hidden;
-  background-color: #7D6E83;
-  color: #F8EDE3;
-}
 
-.container{
-  width: 80%;
-  margin: auto;
-}
-.logo{
-  font-size: 25px;
-  width: 30%;
-  float: left;
-  display: block;
-  margin: 10px 0;
-  color: #F8EDE3;
-
-}
-
-ul{
-  width: 70%;
-  float: left;
-  padding: 0;
-  text-align: right;
-}
-
-ul a{
-  text-decoration: none;
-  color: #F8EDE3;
-  margin: 0 15px;
-}
-
-.LeftBar{
-  overflow: hidden;
-  background-color: #DFD3C3;
-  color: #7D6E83; 
-  width: 200px;
-  height:900px;
-}
-
-.LeftBar ul a{
-
-  color: #7D6E83; 
- 
-}
-.login{
-  margin-top: 50px;
-  
-}

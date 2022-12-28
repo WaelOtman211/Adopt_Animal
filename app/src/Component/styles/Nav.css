@@ -1,0 +1,91 @@
+
+.navbar{
+   
+    background-color: #5d3ff3;
+    color: #F8EDE3;
+   
+  }
+  .TopNavLinks a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #F8EDE3;
+    font-family:'Inter';
+
+  }
+
+  .fav:hover{
+    scale:1.5;
+    transition: scale 0.5s;
+  }
+
+  #favNum{
+position: absolute;
+bottom :-9px;
+left: 58px;
+color: white;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+border: solid;
+border-color: red;
+background-color: red;
+font-size: 10px;
+text-align: center;
+  }
+
+
+  .TopNavLinks a:hover{
+
+    scale: 1.5;
+    transition: scale 0.5s;
+  }
+
+  .TopNavLinks{
+    display: flex;
+    gap: 50px;
+position: relative;
+  }
+
+  
+  .container{
+   
+    margin-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .logo{
+    font-size: 40px;
+
+    margin: 10px 0;
+    color: #F8EDE3;
+    font-family:'Indie Flower';  
+    text-decoration: none;
+  }
+  
+  .LeftBar{
+    display:flex;
+    flex-direction: column;
+    background-color: #e1d3ee;
+    color: #7D6E83; 
+    width: 200px;
+    height:900px;
+    position: fixed;
+    font-size: 24px;
+    
+  }
+  
+  .LeftBar a{
+    padding: 10px;
+    text-align: left;
+    color: #7D6E83; 
+    text-decoration: none;
+    margin-top: 30px;
+   
+  }
+
+  .LeftBar a:hover{
+    background-color: #F8EDE3;
+    
+  }

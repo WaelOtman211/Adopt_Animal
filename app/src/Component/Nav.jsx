@@ -1,5 +1,7 @@
 import React from 'react';
-
+import "./styles/Nav.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 const Nav = () => {
     return (
         <div>
@@ -7,23 +9,25 @@ const Nav = () => {
             <div className="navbar">
                 <div className="container">
                     <a href="#" className="logo">PetsHome</a>
-                    <ul>
-                        <a href="/LogIn">LogIn</a>
-                        <a href="/signUp">SignUp</a>
-                        
+                    <ul className='TopNavLinks'>
+                       <div className='fav'> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
+                       <p id="favNum" >5</p>
+                       </div>
+                        <a href="/LogIn">Login</a>
+                        <a href="/signUp">Sign Up</a>
                     </ul>
                 </div>
             </div>
           
 
         <div className="LeftBar">
-             <ul >
+            
                  <a href="/HomePage">HomePage</a>
-                 <br></br><br></br><br></br>
+                 
                  <a href="/About">About</a>
-                 <br></br><br></br><br></br>
+               
                 <a href="/AdoptCondition">AdoptCondition</a>
-             </ul>
+            
          </div>
         
       

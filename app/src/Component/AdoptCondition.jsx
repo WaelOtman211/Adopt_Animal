@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./styles/AdoptCondition.css"
 function AdoptCondition(){
     return (
 
