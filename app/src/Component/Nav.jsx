@@ -11,7 +11,7 @@ const Nav = () => {
                     <a href="#" className="logo">PetsHome</a>
                     <ul className='TopNavLinks'>
                        <div className='fav'> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
-                       <p id="favNum" >4</p>
+                       <p id="favNum" >3</p>
                        </div>
                         <a href="/LogIn">Login</a>
                         <a href="/signUp">Sign Up</a>
