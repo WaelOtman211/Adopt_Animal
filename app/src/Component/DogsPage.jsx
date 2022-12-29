@@ -1,6 +1,6 @@
 import React  from 'react';
 import { getUserData } from "./utils/getUserData";
- 
+import "./styles/Animal.css"
 function DogsPage(){
  
     const [DogsData, setDogsData] = React.useState(null);
@@ -20,7 +20,7 @@ function DogsPage(){
     let DogsWithPhotos=[];
  
 for (let dog of DogsData) {
-    if (dog.photos.length!=0)
+    if (dog.photos.length!==0)
     DogsWithPhotos.push(dog);
 }  
  
@@ -36,11 +36,11 @@ Hello Dogs Page
     
  DogsWithPhotos.map((Dogs) =>
          
-             <div key={Dogs} >
-              
-              <img src= {Dogs.photos[0].small}  />
+             <div key={Dogs} className="animal" >
+             
+              <img src= {Dogs.photos[0].medium}  />
                 <h2> {Dogs.name}</h2>
-               
+                
                 </div>)}
         
         </div>
