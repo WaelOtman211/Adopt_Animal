@@ -24,6 +24,7 @@ render () {
           <Route path="/LogIn" element= {<LogIn/>}/>
           <Route path="/SignUp" element= {<SignUp/>}/>
           <Route path="/About" element= {<About/>}/>
+          <Route exact path="/" element= {<HomePage/>}/>
           <Route path="/HomePage" element= {<HomePage/>}/>
           <Route path="/AdoptCondition" element= {<AdoptCondition/>}/>
           <Route path="/DogsPage" element= {<DogsPage/>}/>

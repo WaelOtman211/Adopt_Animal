@@ -4,6 +4,7 @@
   }
   
 .animal{
+  position :relative;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -12,4 +13,14 @@
  margin: auto;
   padding: 30px;
 
+}
+.favAnim{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.animal img{
+  width: 180px;
+  height: 210px;
 }
