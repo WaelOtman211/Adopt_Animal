@@ -17,11 +17,13 @@
     scale:1.5;
     transition: scale 0.5s;
   }
-
+.fav{
+  position: relative;
+}
   #favNum{
 position: absolute;
-bottom :-9px;
-left: 58px;
+bottom :-6px;
+right: 0px;
 color: white;
 width: 10px;
 height: 10px;
@@ -31,6 +33,7 @@ border-color: red;
 background-color: red;
 font-size: 10px;
 text-align: center;
+line-height: 7px;
   }
 
 
@@ -43,7 +46,7 @@ text-align: center;
   .TopNavLinks{
     display: flex;
     gap: 50px;
-position: relative;
+
   }
 
   
