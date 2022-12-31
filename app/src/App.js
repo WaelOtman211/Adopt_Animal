@@ -10,15 +10,19 @@ import DogsPage from './Component/DogsPage';
 import RabitsPage from './Component/RabitsPage';
 import HorsesPage from './Component/HorsesPage';
 import CatsPage from './Component/CatsPage';
- 
+ import { getToken } from './utils/getUserData';
 import "./App.css"
-class App extends React.Component{
-render () {
-  return (
+function App(){
+  const[favList,setFavList]=React.useState([]);
+React.useEffect(()=>{
+ 
+//getToken();// auto token 
+},[])
+    return (
     <BrowserRouter>
        
         <div className="app">
-          <Nav />
+          <Nav favList={favList}  />
           <div className="main">
           <Routes>
           <Route path="/LogIn" element= {<LogIn/>}/>
@@ -27,16 +31,16 @@ render () {
           <Route exact path="/" element= {<HomePage/>}/>
           <Route path="/HomePage" element= {<HomePage/>}/>
           <Route path="/AdoptCondition" element= {<AdoptCondition/>}/>
-          <Route path="/DogsPage" element= {<DogsPage/>}/>
-          <Route path="/RabitsPage" element= {<RabitsPage/>}/>
-          <Route path="/CatsPage" element= {<CatsPage/>}/>
-          <Route path="/HorsesPage" element= {<HorsesPage/>}/>
+          <Route path="/DogsPage" element= {<DogsPage favList={favList} setFavList={setFavList} />}/>
+          <Route path="/RabitsPage" element= {<RabitsPage favList={favList} setFavList={setFavList} />}/>
+          <Route path="/CatsPage" element= {<CatsPage favList={favList} setFavList={setFavList} />}/>
+          <Route path="/HorsesPage" element= {<HorsesPage favList={favList} setFavList={setFavList} />}/>
           </Routes>
           </div>
         </div>
         </BrowserRouter> 
   );
-}
+
 }
 
 export default App;

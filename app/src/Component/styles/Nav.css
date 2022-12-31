@@ -1,9 +1,12 @@
 
 .navbar{
-   
+     position :fixed;
     background-color: #5d3ff3;
     color: #F8EDE3;
-   
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: 1;/* to bring the item infront others*/
   }
   .TopNavLinks a{
     text-decoration: none;
@@ -52,12 +55,14 @@ line-height: 7px;
   
   .container{
    
-    margin-inline: 20px;
+       margin-inline: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-  }
+ 
+
+    }
+
   .logo{
     font-size: 40px;
 
@@ -76,7 +81,8 @@ line-height: 7px;
     height:900px;
     position: fixed;
     font-size: 24px;
-    
+    top:79px;
+    left:0px; 
   }
   
   .LeftBar a{

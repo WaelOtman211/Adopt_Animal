@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles/Nav.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-const Nav = () => {
+const Nav = (props) => {
     return (
         <div>
          
@@ -11,7 +11,7 @@ const Nav = () => {
                     <a href="#" className="logo">PetsHome</a>
                     <ul className='TopNavLinks'>
                        <div className='fav'> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
-                       <p id="favNum" >3</p>
+                       <p id="favNum" >{props.favList.length}</p>
                        </div>
                         <a href="/LogIn">Login</a>
                         <a href="/signUp">Sign Up</a>

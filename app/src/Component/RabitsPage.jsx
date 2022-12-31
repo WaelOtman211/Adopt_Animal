@@ -1,5 +1,5 @@
 import React  from 'react';
-import { getUserData } from "./utils/getUserData";
+import { getUserData } from "../utils/getUserData";
 import "./styles/Animal.css"
 
 function RabitsPage(){
@@ -11,7 +11,7 @@ function RabitsPage(){
       const url = `https://api.petfinder.com/v2/animals?type=${type}&page=1`;
       getUserData(url).then(data =>setRabitsData(data.animals));
      
-    }, [type]);
+    }, []);
 
     if (!RabitsData) {
       return <h3>...Loading</h3>;
