@@ -10,14 +10,11 @@ import DogsPage from './Component/DogsPage';
 import RabitsPage from './Component/RabitsPage';
 import HorsesPage from './Component/HorsesPage';
 import CatsPage from './Component/CatsPage';
- import { getToken } from './utils/getUserData';
+
 import "./App.css"
 function App(){
   const[favList,setFavList]=React.useState([]);
-React.useEffect(()=>{
- 
-//getToken();// auto token 
-},[])
+
     return (
     <BrowserRouter>
        
