@@ -1,9 +1,9 @@
 import React  from 'react';
-import { getUserData } from "./utils/getUserData";
+import { getUserData } from "../utils/getUserData";
 import "./styles/Animal.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-function DogsPage(){
+
+import AnimalCard from "./AnimalCard"
+function DogsPage(props){
  
     const [DogsData, setDogsData] = React.useState(null);
   
@@ -17,7 +17,7 @@ function DogsPage(){
         
         );
       
-    }, [type]);
+    }, []);
 
     if (!DogsData) {
       return <h3>...Loading</h3>;
@@ -28,31 +28,29 @@ function DogsPage(){
 for (let dog of DogsData) {
     if (dog.photos.length!==0)
     DogsWithPhotos.push(dog);
+
+    else {
+      dog.photos.push({medium:"/Dogs.png"})
+      DogsWithPhotos.push(dog);
+    }
 }  
- 
+
  
  
     return (
-        <div>
+<div className='mainContainer'>
 <h1>
 Hello Dogs Page
 </h1>
 
- {
-    
- DogsWithPhotos.map((Dogs) =>
-         
-             <div key={Dogs.id} className="animal" >
-             <div className='favAnim'> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
-                       
-                       </div>
-              <img src= {Dogs.photos[0].medium}  />
-                <h2> {Dogs.name}</h2>
-                
-                </div>)}
-        
-        </div>
-    );
+
+        <div className='mainView'>
+
+
+ {DogsWithPhotos.map(item =><AnimalCard id={item.id} photo={item.photos[0].medium} name={item.name} favList={props.favList} setFavList={props.setFavList} > </AnimalCard>)}
+</div>
+</div>
+)
 
 }
-export default DogsPage;
+export default DogsPage

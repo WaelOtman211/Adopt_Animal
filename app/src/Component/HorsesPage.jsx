@@ -1,5 +1,5 @@
 import React  from 'react';
-import { getUserData } from "./utils/getUserData";
+import { getUserData } from "../utils/getUserData";
 import "./styles/Animal.css"
 function HorsesPage(){
     const [HorsesData, setHorsesData] = React.useState(null);
@@ -10,7 +10,7 @@ function HorsesPage(){
       const url = `https://api.petfinder.com/v2/animals?type=${type}&page=1`;
       getUserData(url).then(data =>setHorsesData(data.animals));
      
-    }, [type]);
+    }, []);
 
     if (!HorsesData) {
       return <h3>...Loading</h3>;
