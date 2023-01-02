@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useEffect, useState}  from 'react';
 import {BrowserRouter , Route, Routes} from 'react-router-dom';
 import LogIn from './Component/LogIn';
 import Nav from './Component/Nav';
@@ -7,11 +7,29 @@ import About from './Component/About';
 import HomePage from './Component/HomePage';
 import AdoptCondition from './Component/AdoptCondition';
 import "./App.css"
-class App extends React.Component{
-render () {
+
+function App() {
+
+ /*  const [usernameSignUp, setusernameSignUp] = useState('')
+  const [passwordSignUp, setpasswordSignUp] = useState('')
+  useEffect(() => {
+    fetch("http://localhost:4000/api",{
+    username: usernameSignUp,
+    password: passwordSignUp}).then((response) =>{
+      console.log(response);
+    });
+  }) */
   return (
     <BrowserRouter>
-       
+    {/*    {usernameSignUp.length?(
+        usernameSignUp.map((x)=>(
+             <div key={x.id}>
+               <p>{x.username}</p>
+             </div>
+        ))
+       ):(
+           <p>no data</p>
+       )} */}
         <div className="app">
           <Nav />
           <div className="main">
@@ -25,8 +43,9 @@ render () {
           </div>
         </div>
         </BrowserRouter> 
+        
   );
 }
-}
+
 
 export default App;
