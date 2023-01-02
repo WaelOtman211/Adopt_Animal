@@ -15,11 +15,11 @@ function AnimalCard(props) {
 
     return(
 
-<div key={props.id} className="animal" >
+        <div className="animal" >
              <div className='favAnim' onClick={setFavorite} style={animal.length==0? {color:"gray"}:{color:"#5d3ff3"}}> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
                        
                        </div>
-              <img src= {props.photo}  />
+              <img src= {props.photo} />
                 <h2> {props.name}</h2>
                 
                 </div>
