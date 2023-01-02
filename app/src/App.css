@@ -38,9 +38,11 @@
 }
 
 .main{
+  margin-top: 79px;
   margin-left: 200px;
   display:flex;
 justify-content: center;
 align-items: center;
 height: 40vw;
+
 }
