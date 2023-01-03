@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import "./styles/Nav.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
@@ -10,11 +11,12 @@ const Nav = (props) => {
                 <div className="container">
                     <a href="#" className="logo">PetsHome</a>
                     <ul className='TopNavLinks'>
-                       <div className='fav'> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
+                       <div className='fav'>
+                        <Link to='/MyFavorite'> <FontAwesomeIcon icon={solid('heart')} size="2x"/></Link>
                        <p id="favNum" >{props.favList.length}</p>
                        </div>
-                        <a href="/LogIn">Login</a>
-                        <a href="/signUp">Sign Up</a>
+                        <Link to="/LogIn">Login</Link>
+                        <Link to="/signUp">Sign Up</Link>
                     </ul>
                 </div>
             </div>
@@ -22,11 +24,11 @@ const Nav = (props) => {
 
         <div className="LeftBar">
             
-                 <a href="/HomePage">HomePage</a>
+                 <Link to="/HomePage">HomePage</Link>
                  
-                 <a href="/About">About</a>
+                 <Link to="/About">About</Link>
                
-                <a href="/AdoptCondition">AdoptCondition</a>
+                <Link to="/AdoptCondition">AdoptCondition</Link>
             
          </div>
         

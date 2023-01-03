@@ -46,3 +46,8 @@ align-items: center;
 height: 40vw;
 
 }
+.mainContainer{
+  height: 100%;
+padding-inline: 50px;
+
+}

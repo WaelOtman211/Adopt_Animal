@@ -1,23 +1,24 @@
 import React  from 'react';
 import "./styles/HomePage.css"
 import HomePageItem from './HomePageItem';
+import { Link } from 'react-router-dom';
 function HomePage(){
      return(
      <div>
      <h1>Find Your New Best Friend</h1>
        <div className='homeItems'>
-         <a  href="/DogsPage">
+         <Link to="/DogsPage">
         <HomePageItem img="/Dogs.png" title="Dogs"/>
-        </a>
-        <a href="/CatsPage">
+        </Link>
+        <Link to="/CatsPage">
         <HomePageItem img="/Cats.png" title="Cats"/>
-        </a>
-        <a href="/HorsesPage">
+        </Link>
+        <Link to="/HorsesPage">
         <HomePageItem img="/Horses.png" title="Horses"/>
-        </a>
-        <a href="/RabitsPage">
-        <HomePageItem img="/Rabits.png" title="Rabits"/>
-        </a>
+        </Link>
+        <Link to="/RabbitsPage">
+        <HomePageItem img="/Rabits.png" title="Rabbits"/>
+        </Link>
         </div>
      </div>
      );

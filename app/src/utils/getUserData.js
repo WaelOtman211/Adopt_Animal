@@ -5,21 +5,8 @@ const checkResponse = (response) => {
  
   export const getUserData = async (url) => {
    let data = await getToken();
-return fetch(url
-    ,
- {
-   method: "GET",
-
-   headers: {
-     "Authorization": "Bearer "+data.access_token
-     
-   },
+return fetch(url,{method: "GET",headers: {"Authorization": "Bearer "+data.access_token}}).then(checkResponse);
  }
-   ).then(checkResponse);
-
-
-   
-  }
  
 
   
