@@ -1,7 +1,12 @@
 
 .navbar{
+<<<<<<< HEAD
+   
+    background-color: #7D6E83;
+=======
      position :fixed;
     background-color: #5d3ff3;
+>>>>>>> c5076ce0fae81b89fdb5f1f4fd9e27c4b4e8cbae
     color: #F8EDE3;
     top:0px;
     left:0px;
