@@ -24,6 +24,10 @@ app.get('/LogIn', (req, res) =>{
     const password = req.body.password;
     
     db.query(
+
+
+
+        
         'SELECT * FROM users WHERE username = $ AND password = $',
         [username, password],
         (err, result) =>{
