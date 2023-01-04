@@ -9,9 +9,11 @@ import AdoptCondition from './Component/AdoptCondition';
 import MyFav from './Component/MyFav';
 import "./App.css"
 import AnimalPage from './Component/AnimalPage';
+import AnimalDataPaje from './Component/AnimalDataPaje';
+
 function App(){
   const[favList,setFavList]=React.useState([]);
-
+ const[AnimalData,setAnimalData]=React.useState([]);
     return (
     <BrowserRouter forceRefresh="false">
        
@@ -25,11 +27,12 @@ function App(){
           <Route exact path="/" element= {<HomePage/>}/>
           <Route path="/HomePage" element= {<HomePage/>}/>
           <Route path="/AdoptCondition" element= {<AdoptCondition/>}/>
-          <Route path="/DogsPage" element= {<AnimalPage type='dog' favList={favList} setFavList={setFavList} />}/>
-          <Route path="/RabbitsPage" element= {<AnimalPage type='rabbit' favList={favList} setFavList={setFavList} />}/>
-          <Route path="/CatsPage" element= {<AnimalPage type='cat' favList={favList} setFavList={setFavList} />}/>
-          <Route path="/HorsesPage" element= {<AnimalPage type='horse' favList={favList} setFavList={setFavList} />}/>
+          <Route path="/DogsPage" element= {<AnimalPage type='dog' favList={favList} setFavList={setFavList}  setAnimalData={setAnimalData}/>}/>
+          <Route path="/RabbitsPage" element= {<AnimalPage type='rabbit' favList={favList} setFavList={setFavList} setAnimalData={setAnimalData} />}/>
+          <Route path="/CatsPage" element= {<AnimalPage type='cat' favList={favList} setFavList={setFavList}  setAnimalData={setAnimalData} />}/>
+          <Route path="/HorsesPage" element= {<AnimalPage type='horse' favList={favList} setFavList={setFavList} setAnimalData={setAnimalData} />}/>
           <Route path="/MyFavorite" element= {<MyFav favList={favList} setFavList={setFavList}/>}/>
+          <Route path="/AnimalDataPaje" element= {<AnimalDataPaje AnimalData={AnimalData}  />}/>
           </Routes>
           </div>
         </div>
