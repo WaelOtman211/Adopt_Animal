@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useEffect, useState}  from 'react';
 import {BrowserRouter , Route, Routes} from 'react-router-dom';
 import LogIn from './Component/LogIn';
 import Nav from './Component/Nav';
@@ -34,8 +34,7 @@ function App(){
           </div>
         </div>
         </BrowserRouter> 
+        
   );
-
-}
-
+    }
 export default App;
