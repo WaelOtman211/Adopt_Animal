@@ -26,6 +26,12 @@ app.get('/LogIn', (req, res) =>{
     
     db.query(
         'SELECT * FROM users WHERE username = $1 AND password = $2',
+
+
+
+        
+        'SELECT * FROM users WHERE username = $ AND password = $',
+
         [username, password],
         (err, result) =>{
            if (err){

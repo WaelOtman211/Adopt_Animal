@@ -47,7 +47,7 @@ Hello Dogs Page
         <div className='mainView'>
 
 
- {AnimalWithPhotos.map(item =><AnimalCard key={item.id} status={item.status} size={item.size} id={item.id} photo={item.photos[0].medium} name={item.name} favList={props.favList} setFavList={props.setFavList} AnimalData={props.AnimalData} setAnimalData={props.setAnimalData} animalinfo={item}> </AnimalCard>)}
+ {AnimalWithPhotos.map(item =><AnimalCard key={item.id} status={item.status} size={item.size} id={item.id} photo={item.photos[0].medium} name={item.name} favList={props.favList} setFavList={props.setFavList} > </AnimalCard>)}
 </div>
 </div>
 )

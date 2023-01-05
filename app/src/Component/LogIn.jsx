@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import React,{useState} from 'react';
 import "./styles/Login.css"
+import Axios from 'axios';
 const LogIn = () => {
-
+   
+        
 
     const [usernameLogin, setusernameLogin] = useState('')
     const [passwordLogin, setpasswordLogin] = useState('')
@@ -42,7 +43,7 @@ const LogIn = () => {
           alert(e)
         }
       } 
-
+    
     return (
         <div className='login'>
            
@@ -59,8 +60,8 @@ const LogIn = () => {
                 <button onClick={onSubmit}>Login</button>
                 <h1>{loginstatus}</h1>
         </div>
-    )
+    
 
-}
-
+)
+            }
 export default LogIn;

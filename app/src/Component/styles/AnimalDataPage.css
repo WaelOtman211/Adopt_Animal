@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+  }
+  
+.Data h2{ 
+    color: #7D6E83;
+    font-size: 40px;
+}
+p{ 
+    color: #7D6E83;
+    font-size: 20px;
+}
+.Data img{
+    width: 180px;
+    height: 210px;
+  }
+ 

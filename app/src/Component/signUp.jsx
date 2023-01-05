@@ -1,37 +1,12 @@
-import  React,{ useState, useEffect } from 'react';
-import Axios from 'axios';
+import React,{useState} from 'react';
 import "./styles/signUp.css"
+import Axios from 'axios';
+
+
 
  const SignUp = () => {
     const [usernameSignUp, setusernameSignUp] = useState('')
     const [passwordSignUp, setpasswordSignUp] = useState('')
-/*  const data = async ()=>{ */
-   /*  Axios.post("http://localhost:4000/SignUp", {
-           username: usernameSignUp,
-           password: passwordSignUp
-       })
-       .then( (response)  => {
-            console.log(response);
-    
-        }) 
-        .catch((error) => {
-            console.log(error)
-        });
-     */
-   /*   try {
-        const body = {usernameSignUp,passwordSignUp};
-        console.log(body);
-        const res = await fetch("http://localhost:4000/SignUp", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-        console.log(res);
-      } catch (err) {
-        console.error(err.message);
-      } 
-
-    }  */
      
    
         const onSubmit = async (e) => {
@@ -48,7 +23,7 @@ import "./styles/signUp.css"
           }
         }
     
-       
+   
     return (
         <div className='login'>
             <form>
@@ -66,11 +41,8 @@ import "./styles/signUp.css"
                 <button onClick={onSubmit}>SignUp</button>
 
                </form>
-           
+           </div>
 
-        </div>
-    )
-
+)
             }
-
 export default SignUp;
