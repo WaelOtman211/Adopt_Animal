@@ -31,7 +31,7 @@ function App(){
           <Route path="/RabbitsPage" element= {<AnimalPage type='rabbit' favList={favList} setFavList={setFavList} setAnimalData={setAnimalData} />}/>
           <Route path="/CatsPage" element= {<AnimalPage type='cat' favList={favList} setFavList={setFavList}  setAnimalData={setAnimalData} />}/>
           <Route path="/HorsesPage" element= {<AnimalPage type='horse' favList={favList} setFavList={setFavList} setAnimalData={setAnimalData} />}/>
-          <Route path="/MyFavorite" element= {<MyFav favList={favList} setFavList={setFavList}/>}/>
+          <Route path="/MyFavorite" element= {<MyFav favList={favList} setFavList={setFavList} setAnimalData={setAnimalData}/>}/>
           <Route path="/AnimalDataPage" element= {<AnimalDataPage AnimalData={AnimalData}  />}/>
           </Routes>
           </div>

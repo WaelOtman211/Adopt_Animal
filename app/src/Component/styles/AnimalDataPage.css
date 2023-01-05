@@ -15,3 +15,22 @@ p{
     height: 210px;
   }
  
+  .adoptimg{
+ width: 100px;
+ height: 100px;
+ position: absolute;
+ right: 0px;
+ top: 20px;
+animation-name: swing;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+  }
+  @keyframes swing {
+  
+    0%  {rotate: -30deg;}
+    50%  {rotate: 30deg;}
+    100%  {rotate: -30deg;}
+  }
+  .dataPageContainer{
+    position: relative;
+  }
