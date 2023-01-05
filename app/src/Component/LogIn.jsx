@@ -8,7 +8,7 @@ const LogIn = () => {
     const [passwordLogin, setpasswordLogin] = useState('')
     const [loginstatus, setloginstatus] = useState('')
 
-    useEffect(() => {
+     /* const submit = useEffect(() => {
         Axios.get("http://localhost:4000/LogIn", { 
             username: usernameLogin,
             password: passwordLogin
@@ -21,7 +21,27 @@ const LogIn = () => {
             }
          
         });
-    })
+    })  */
+
+    const onSubmit = async (e) => {
+        e.preventDefault()
+        const get = {
+          username: usernameLogin,
+          password: passwordLogin
+      }
+        try {
+          const response = await Axios.get('http://localhost:4000/LogIn', get);
+          if(response.data.message){
+            setloginstatus(response.data.message);
+        }
+        else{
+            setloginstatus(response.data[0].username)
+        }
+     }
+         catch (e) {
+          alert(e)
+        }
+      } 
 
     return (
         <div className='login'>
@@ -36,7 +56,7 @@ const LogIn = () => {
                    setpasswordLogin(e.target.value);
                 }} placeholder="Enter Password" name="psw" value={passwordLogin} required />
 
-                <button onClick={LogIn}>Login</button>
+                <button onClick={onSubmit}>Login</button>
                 <h1>{loginstatus}</h1>
         </div>
     )
