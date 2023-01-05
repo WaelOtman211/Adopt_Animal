@@ -9,7 +9,7 @@ import AdoptCondition from './Component/AdoptCondition';
 import MyFav from './Component/MyFav';
 import "./App.css"
 import AnimalPage from './Component/AnimalPage';
-import AnimalDataPaje from './Component/AnimalDataPaje';
+import AnimalDataPage from './Component/AnimalDataPage';
 
 function App(){
   const[favList,setFavList]=React.useState([]);
@@ -32,7 +32,7 @@ function App(){
           <Route path="/CatsPage" element= {<AnimalPage type='cat' favList={favList} setFavList={setFavList}  setAnimalData={setAnimalData} />}/>
           <Route path="/HorsesPage" element= {<AnimalPage type='horse' favList={favList} setFavList={setFavList} setAnimalData={setAnimalData} />}/>
           <Route path="/MyFavorite" element= {<MyFav favList={favList} setFavList={setFavList}/>}/>
-          <Route path="/AnimalDataPaje" element= {<AnimalDataPaje AnimalData={AnimalData}  />}/>
+          <Route path="/AnimalDataPage" element= {<AnimalDataPage AnimalData={AnimalData}  />}/>
           </Routes>
           </div>
         </div>

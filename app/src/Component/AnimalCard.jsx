@@ -24,7 +24,7 @@ function AnimalCard(props) {
                        
                     </div>
                     
-                    <Link to='/AnimalDataPaje' onClick={clicked}>
+                    <Link to='/AnimalDataPage' onClick={clicked}>
               <img src= {props.photo }  />
                 <h2> {props.name}</h2>
                 </Link>
