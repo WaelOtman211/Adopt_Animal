@@ -3,7 +3,7 @@
  
  
    
-    background-color: #7D6E83;
+    background-color: #5d3ff3;
  
      position :fixed;
  
@@ -34,7 +34,7 @@
   #favNum{
 position: absolute;
 bottom :-6px;
-right: 0px;
+right: 6px;
 color: white;
 width: 10px;
 height: 10px;

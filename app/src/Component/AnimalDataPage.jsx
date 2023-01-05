@@ -1,7 +1,7 @@
 import React  from 'react';
 import "./styles/AnimalDataPage.css"
 
-function AnimalDataPaje(props){
+function AnimalDataPage(props){
  
     return(
         <div className="Data">
@@ -18,4 +18,4 @@ function AnimalDataPaje(props){
 </div>
     );
 }
-export default AnimalDataPaje;
+export default AnimalDataPage;
