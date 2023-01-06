@@ -11,16 +11,25 @@ CREATE TABLE users (
 );
 
 
-/* CREATE TABLE myFavorite(
+ CREATE TABLE myFavorite(
 id serial PRIMARY KEY,
-userID VARCHAR(9) REFERENCES users(id),
+userID VARCHAR(9),
 animalID VARCHAR(15) not null, 
 animalPhoto text,
 animalName VARCHAR(255),
 animalSize VARCHAR(15),
 animalStatus VARCHAR(15)
+); 
 
-
-); */
+CREATE TABLE adoptHistory(
+id serial PRIMARY KEY,
+userID VARCHAR(9),
+animalID VARCHAR(15) not null, 
+animalPhoto text,
+animalName VARCHAR(255),
+animalSize VARCHAR(15),
+animalStatus VARCHAR(15),
+adoptDate date
+);
 
 COMMIT;
