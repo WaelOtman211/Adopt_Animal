@@ -6,10 +6,32 @@ const bcrypt = require("bcrypt");
 
 app.use(cors());
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
+process.on("uncaughtException", function (err) {
+  console.log(err);
+});
 
 app.listen(4000, () => {
   console.log("server started on port http://localhost:4000");
+});
+
+app.post("/adoptAnimal", async (req, res) => {
+  const { animalID, date, userID, photo, animalName, size, status } = req.body;
+  console.log(req.body);
+  let data = await db.query(
+    `INSERT INTO adopthistory (userID,animalID,animalPhoto,animalName,animalSize,animalStatus,adoptDate) VALUES ('${userID}','${animalID}','${photo}','${animalName}','${size}','${status}','${date}') RETURNING * `
+  );
+  res.json(data.rows);
+});
+
+app.post("/setfavorite", async (req, res) => {
+  const { animalID, userID, photo, animalName, size, status } = req.body;
+  console.log(req.body);
+  let data = await db.query(
+    `INSERT INTO myfavorite (userID,animalID,animalPhoto,animalName,animalSize,animalStatus) VALUES ('${userID}','${animalID}','${photo}','${animalName}','${size}','${status}') RETURNING * `
+  );
+  res.json(data.rows);
 });
 
 const saltRounds = 10;

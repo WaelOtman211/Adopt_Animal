@@ -1,18 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import {Link} from 'react-router-dom';
-
+import Axios from 'axios'
 
 
 function AnimalCard(props) {
     let animal = props.favList.filter(x=>x.id===props.id);
-    function setFavorite(){
-        
-         if(animal.length===0) props.setFavList([...props.favList,{id:props.id,photo:props.photo,animalName:props.name}])
+    async function setFavorite(){
+        const post = {
+            animalID: props.id,
+            userID:'123456789',
+            photo:props.photo,
+            animalName:props.name,
+            size:props.size,
+            status:props.status
+        }
+          try {
+            const res = await Axios.post('http://localhost:4000/setfavorite', post)
+          if(animal.length===0) props.setFavList([...props.favList,props.animalinfo])
          else props.setFavList(props.favList.filter(x=>x.id!=props.id))
+          } catch (e) {
+            alert(e)
+          }
+         
     }
 
     function clicked(){
+        console.log(props.animalinfo)
         props.setAnimalData(props.animalinfo)
     }
 
@@ -24,7 +38,7 @@ function AnimalCard(props) {
                        
                     </div>
                     
-                    <Link to='/AnimalDataPaje' onClick={clicked}>
+                    <Link to='/AnimalDataPage' onClick={clicked}>
               <img src= {props.photo }  />
                 <h2> {props.name}</h2>
                 </Link>

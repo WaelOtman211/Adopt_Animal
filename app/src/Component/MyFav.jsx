@@ -10,7 +10,7 @@ function myFav(props){
 
 <div className="faveMain" >
 
-{props.favList.map(x=> <FavLine favList={props.favList} setFavList={props.setFavList} key={x.id} id={x.id} photo={x.photo} animalName={x.animalName} size={x.size} status={x.status}></FavLine> )}
+{props.favList.map(x=> <FavLine animalInfo={x} setAnimalData={props.setAnimalData} favList={props.favList} setFavList={props.setFavList} key={x.id} ></FavLine> )}
 
 
 
