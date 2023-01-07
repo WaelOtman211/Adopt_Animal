@@ -34,12 +34,27 @@ app.post("/setfavorite", async (req, res) => {
   res.json(data.rows);
 });
 
+app.get("/getHistory", async (req, res) => {
+    let data = await db.query(
+      `select * from adopthistory `
+    );
+    res.json(data.rows);
+  });
+
+  app.get("/getFavorite", async (req, res) => {
+    let data = await db.query(
+      `select * from myfavorite `
+    );
+    res.json(data.rows);
+  });
+
 const saltRounds = 10;
 app.post("/SignUp", async (req, res) => {
   const { username, password } = req.body;
   bcrypt.hash(password, saltRounds);
   const salt = bcrypt.genSaltSync(saltRounds);
   const hash = bcrypt.hashSync(password, salt);
+
   let data = await db.query(
     `INSERT INTO users (username, password) VALUES ($1,$2) RETURNING * `,
     [username, hash]
@@ -50,7 +65,7 @@ app.post("/SignUp", async (req, res) => {
 app.post("/LogIn", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-
+   console.log(username)
   db.query(
     `SELECT * FROM users WHERE username = $1`,
     [username],
@@ -58,7 +73,7 @@ app.post("/LogIn", (req, res) => {
       if (err) {
         return res.json({ err: err });
       } else if (result) {
-        //console.log(result);
+        console.log(result);
         let compare = await bcrypt.compare(password, result.rows[0].password);
         console.log(compare);
         if (compare) {

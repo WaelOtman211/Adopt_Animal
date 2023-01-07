@@ -11,12 +11,12 @@ const Nav = (props) => {
                 <div className="container">
                     <a href="#" className="logo">PetsHome</a>
                     <ul className='TopNavLinks'>
-                       <div className='fav'>
-                        <Link to='/MyFavorite'> <FontAwesomeIcon icon={solid('heart')} size="2x"/></Link>
+                      {props.loggedUser?<div className='fav'>
+                       <Link to='/MyFavorite'> <FontAwesomeIcon icon={solid('heart')} size="2x"/></Link>
                        <p id="favNum" >{props.favList.length}</p>
-                       </div>
-                        <Link to="/LogIn">Login</Link>
-                        <Link to="/signUp">Sign Up</Link>
+                       </div>:<div></div>}
+                       { !props.loggedUser?<Link to="/LogIn">Login</Link>:<h3>Welcome,</h3>}
+                       { !props.loggedUser?<Link to="/signUp">Sign Up</Link>:<h3>{props.loggedUser}</h3> }
                     </ul>
                 </div>
             </div>
@@ -24,12 +24,12 @@ const Nav = (props) => {
 
         <div className="LeftBar">
             
-                 <Link to="/HomePage">HomePage</Link>
+                 <Link to="/HomePage">Home Page</Link>
                  
                  <Link to="/About">About</Link>
                
-                <Link to="/AdoptCondition">AdoptCondition</Link>
-            
+                <Link to="/AdoptCondition">Adopt Condition</Link>
+             { props.loggedUser? <Link to="/AdoptHistory">Adopt History</Link>:""}
          </div>
         
       
