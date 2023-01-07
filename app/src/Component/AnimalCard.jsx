@@ -5,20 +5,33 @@ import Axios from 'axios'
 
 
 function AnimalCard(props) {
-    let animal = props.favList.filter(x=>x.id===props.id);
+    let animal = props.favList.filter(x=>x.animalid==props.id);
+   
     async function setFavorite(){
-        const post = {
-            animalID: props.id,
-            userID:props.loggedUser,
-            photo:props.photo,
-            animalName:props.name,
-            size:props.size,
-            status:props.status
-        }
+
           try {
+            console.log(animal.length)
+            if(animal.length==0){
+              const post = {
+                animalID: props.id,
+                userid:props.loggedUser,
+                photo:props.photo,
+                animalName:props.name,
+                size:props.size,
+                status:props.status
+            }
             const res = await Axios.post('http://localhost:4000/setfavorite', post)
-          if(animal.length===0) props.setFavList([...props.favList,props.animalinfo])
-         else props.setFavList(props.favList.filter(x=>x.id!=props.id))
+            console.log(res);
+           props.setFavList([...props.favList,res.data[0]])
+          }          
+         else{
+          const post = {
+            ID: animal[0].id,
+  
+        }
+          const res = await Axios.post('http://localhost:4000/delfavorite', post)
+         props.setFavList(props.favList.filter(x=>x.animalid!=props.id))  
+        } 
           } catch (e) {
             alert(e)
           }

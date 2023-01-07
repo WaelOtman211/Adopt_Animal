@@ -16,8 +16,13 @@ function AnimalDataPage(props){
         status:props.AnimalData.status
     }
       try {
-        const res = await Axios.post('http://localhost:4000/adoptAnimal', post)
-        toast.success("Adopted Successfully",{position:"bottom-center"})
+        
+        const res = await toast.promise(Axios.post('http://localhost:4000/adoptAnimal', post),
+       {
+        pending:"Adopting Animal",
+        success: "Adopted Successfully",
+        error:"Adoption failed"
+      },{position:"top-center",autoClose:3000})
         console.log(res.data)
       } catch (e) {
         alert(e)

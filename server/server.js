@@ -26,13 +26,24 @@ app.post("/adoptAnimal", async (req, res) => {
 });
 
 app.post("/setfavorite", async (req, res) => {
-  const { animalID, userID, photo, animalName, size, status } = req.body;
-  console.log(req.body);
+  const { animalID, userid, photo, animalName, size, status } = req.body;
+
   let data = await db.query(
-    `INSERT INTO myfavorite (userID,animalID,animalPhoto,animalName,animalSize,animalStatus) VALUES ('${userID}','${animalID}','${photo}','${animalName}','${size}','${status}') RETURNING * `
+    `INSERT INTO myfavorite (userid,animalID,animalPhoto,animalName,animalSize,animalStatus) VALUES ('${userid}','${animalID}','${photo}','${animalName}','${size}','${status}') RETURNING * `
   );
+ 
   res.json(data.rows);
 });
+
+app.post("/delfavorite", async (req, res) => {
+    const { ID } = req.body;
+    console.log(ID);
+        let data = await db.query(
+      `delete from myfavorite where id=${ID} RETURNING * `
+    );
+    
+    res.json(data.rows);
+  });
 
 app.get("/getHistory", async (req, res) => {
     let data = await db.query(
@@ -54,12 +65,18 @@ app.post("/SignUp", async (req, res) => {
   bcrypt.hash(password, saltRounds);
   const salt = bcrypt.genSaltSync(saltRounds);
   const hash = bcrypt.hashSync(password, salt);
-
+  let user = await db.query(
+    `SELECT * FROM users WHERE username='${username}'`
+  );
+  if(user.rows.length==0){
   let data = await db.query(
     `INSERT INTO users (username, password) VALUES ($1,$2) RETURNING * `,
     [username, hash]
   );
   res.json(data.rows);
+  }else{
+    res.json({ message: "username already exist" });
+  }
 });
 
 app.post("/LogIn", (req, res) => {
@@ -74,12 +91,17 @@ app.post("/LogIn", (req, res) => {
         return res.json({ err: err });
       } else if (result) {
         console.log(result);
-        let compare = await bcrypt.compare(password, result.rows[0].password);
-        console.log(compare);
-        if (compare) {
-          return res.json(result.rows[0]);
-        } else {
-          res.json({ message: "wrong username/password" });
+        if(result.rows.length>0){
+            let compare = await bcrypt.compare(password, result.rows[0].password);
+            console.log(compare);
+            if (compare) {
+            return res.json(result.rows[0]);
+            } else {
+            res.json({ message: "wrong username/password" });
+            }
+
+        }else{
+            res.json({ message: "username doesn't exist please sign up" });
         }
       }
     }
