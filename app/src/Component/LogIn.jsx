@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./styles/Login.css";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 const LogIn = (props) => {
   const [usernameLogin, setusernameLogin] = useState("");
   const [passwordLogin, setpasswordLogin] = useState("");
@@ -16,6 +18,7 @@ const LogIn = (props) => {
     try {
       const response = await Axios.post("http://localhost:4000/LogIn", post);
       if (response.data.message) {
+        toast.error(response.data.message,{position:"top-center",autoClose:3000})
         setloginstatus(response.data.message);
       } else {
         //login successful
@@ -24,7 +27,7 @@ const LogIn = (props) => {
         navigate("/HomePage")
       }
     } catch (e) {
-      alert(e);
+        toast.error(e,{position:"top-center",autoClose:3000})
     }
   };
 
@@ -60,8 +63,9 @@ const LogIn = (props) => {
         />
 
         <button onClick={onSubmit}>Login</button>
-        <h6>{loginstatus}</h6>
+        
       </form>
+      <ToastContainer/>
     </div>
   );
 };
