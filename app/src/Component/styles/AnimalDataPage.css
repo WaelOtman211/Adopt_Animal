@@ -33,4 +33,5 @@ animation-iteration-count: infinite;
   }
   .dataPageContainer{
     position: relative;
+    width: 80%;
   }

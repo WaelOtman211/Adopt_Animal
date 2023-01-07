@@ -9,7 +9,7 @@ function AnimalCard(props) {
     async function setFavorite(){
         const post = {
             animalID: props.id,
-            userID:'123456789',
+            userID:props.loggedUser,
             photo:props.photo,
             animalName:props.name,
             size:props.size,
@@ -34,9 +34,10 @@ function AnimalCard(props) {
     return(
 
         <div className="animal" >
-             <div className='favAnim' onClick={setFavorite} style={animal.length==0? {color:"gray"}:{color:"#5d3ff3"}}> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
+             
+             {props.loggedUser?<div className='favAnim' onClick={setFavorite} style={animal.length==0? {color:"gray"}:{color:"#5d3ff3"}}> <FontAwesomeIcon icon={solid('heart')} size="2x"/>
                        
-                    </div>
+                    </div>:<div></div>}
                     
                     <Link to='/AnimalDataPage' onClick={clicked}>
               <img src= {props.photo }  />

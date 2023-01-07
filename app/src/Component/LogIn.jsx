@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./styles/Login.css";
 import Axios from "axios";
-const LogIn = () => {
+import { useNavigate } from "react-router-dom";
+const LogIn = (props) => {
   const [usernameLogin, setusernameLogin] = useState("");
   const [passwordLogin, setpasswordLogin] = useState("");
   const [loginstatus, setloginstatus] = useState("");
-
+  const navigate= useNavigate()
   const onSubmit = async (e) => {
     e.preventDefault();
     const post = {
@@ -17,7 +18,10 @@ const LogIn = () => {
       if (response.data.message) {
         setloginstatus(response.data.message);
       } else {
+        //login successful
         setloginstatus(response.data.username);
+        props.setLoggedUser(response.data.username)
+        navigate("/HomePage")
       }
     } catch (e) {
       alert(e);

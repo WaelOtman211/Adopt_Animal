@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users,myFavorite;
+DROP TABLE IF EXISTS users,myFavorite,adoptHistory;
 
   
 
@@ -13,7 +13,7 @@ CREATE TABLE users (
 
  CREATE TABLE myFavorite(
 id serial PRIMARY KEY,
-userID VARCHAR(9),
+userID VARCHAR(255),
 animalID VARCHAR(15) not null, 
 animalPhoto text,
 animalName VARCHAR(255),
@@ -23,7 +23,7 @@ animalStatus VARCHAR(15)
 
 CREATE TABLE adoptHistory(
 id serial PRIMARY KEY,
-userID VARCHAR(9),
+userID VARCHAR(255),
 animalID VARCHAR(15) not null, 
 animalPhoto text,
 animalName VARCHAR(255),

@@ -1,14 +1,15 @@
 import React  from 'react';
 import "./styles/AnimalDataPage.css"
 import Axios from 'axios';
-
+import {ToastContainer,toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 function AnimalDataPage(props){
   async function adoptAnimal( ){
 
     const post = {
         animalID: props.AnimalData.id,
         date: new Date(),
-        userID:'123456789',
+        userID:props.loggedUser,
         photo:props.AnimalData.photos[0].medium,
         animalName:props.AnimalData.name,
         size:props.AnimalData.size,
@@ -16,6 +17,7 @@ function AnimalDataPage(props){
     }
       try {
         const res = await Axios.post('http://localhost:4000/adoptAnimal', post)
+        toast.success("Adopted Successfully",{position:"bottom-center"})
         console.log(res.data)
       } catch (e) {
         alert(e)
@@ -23,9 +25,10 @@ function AnimalDataPage(props){
 
     
  }
+
     return(
         <div className='dataPageContainer'>
-            <img onClick={adoptAnimal} className='adoptimg' src="/adopt1.jpg" alt="no image" />
+            {props.loggedUser?<img onClick={adoptAnimal} className='adoptimg' src="/adopt1.jpg" alt="no image"/>:""}
         <div className="Data">
             <h2> {props.AnimalData.name}</h2>
           <img src= {props.AnimalData.photos[0].medium }  />
@@ -38,6 +41,7 @@ function AnimalDataPage(props){
           <p>Gender: {props.AnimalData.gender} </p>
           <p>About: {props.AnimalData.description}</p>
 </div>
+<ToastContainer/>
 </div>
     );
 }
