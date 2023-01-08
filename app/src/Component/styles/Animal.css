@@ -18,6 +18,9 @@ height: 245px;
 text-align: center;
 
 }
+.mainContainer h1{
+margin-bottom: 50px;
+}
 .animal a {
   text-decoration: none;
 }
@@ -28,6 +31,7 @@ text-align: center;
 
 
 }
+
 .favAnim:active{
   scale: 0.6;
   transition: scale 0.5s;
@@ -44,4 +48,15 @@ text-align: center;
   flex-wrap: wrap;
   gap: 20px;
 
+}
+
+.searchBar{
+   text-align: center;
+margin-bottom: 50px;
+}
+.searchBar input{
+  width: 600px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 20px;
 }

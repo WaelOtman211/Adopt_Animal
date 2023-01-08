@@ -1,37 +1,42 @@
 * {
-    box-sizing: border-box;
-  }
-  
-.Data h2{ 
-    color: #7D6E83;
-    font-size: 40px;
+  box-sizing: border-box;
 }
-p{ 
-    color: #7D6E83;
-    font-size: 20px;
+
+.Data h2 {
+  color: #7d6e83;
+  font-size: 40px;
 }
-.Data img{
-    width: 180px;
-    height: 210px;
+p {
+  color: #7d6e83;
+  font-size: 20px;
+}
+.Data img {
+  width: 180px;
+  height: 210px;
+}
+
+.adoptimg {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 30px;
+  top: 150px;
+  animation-name: swing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes swing {
+  0% {
+    rotate: -30deg;
   }
- 
-  .adoptimg{
- width: 100px;
- height: 100px;
- position: absolute;
- right: 0px;
- top: 20px;
-animation-name: swing;
-animation-duration: 3s;
-animation-iteration-count: infinite;
+  50% {
+    rotate: 30deg;
   }
-  @keyframes swing {
-  
-    0%  {rotate: -30deg;}
-    50%  {rotate: 30deg;}
-    100%  {rotate: -30deg;}
+  100% {
+    rotate: -30deg;
   }
-  .dataPageContainer{
-    position: relative;
-    width: 80%;
-  }
+}
+.dataPageContainer {
+  position: relative;
+  width: 80%;
+}

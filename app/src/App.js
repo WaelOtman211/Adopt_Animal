@@ -24,14 +24,14 @@ const [loggedUser,setLoggedUser]=React.useState(null)
 async function getfavorite(){
   let res = await Axios.get('http://localhost:4000/getFavorite')
   
-      setFavList(res.data.filter(x=> x.userID==loggedUser))
+      setFavList(res.data.filter(x=> x.userid==loggedUser))
 
 }      
 React.useEffect(() => {
 
 getfavorite()
 
-},[])
+},[loggedUser])
 
 
     return (
