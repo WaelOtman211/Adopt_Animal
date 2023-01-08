@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #631feb;
+  background-color: #7d6e83;
 
   position: fixed;
 
@@ -55,7 +55,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.TopNavLinks h3{
+.TopNavLinks h3 {
   height: 20px;
 }
 
